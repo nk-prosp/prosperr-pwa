@@ -55,6 +55,8 @@ const Index = (props) => {
 
   const [selectedTabForAdvisors, setSelectedTabForAdvisors] = useState(constants.prosperrAdvisors.tabs[0]);
   const [advisors, setAdvisors] = useState(constants.prosperrAdvisors.topAdvisors);
+  const [activeTab, setActiveTab] = useState(constants.prosperrDoes.tabs[0]);
+  
   // useEffect(() => {
   //   console.log(props);
   // }, [props.auth]);
@@ -153,20 +155,24 @@ const Index = (props) => {
       <PromoWrapper>
         <PromoContainer>
           <ImageWrapper>
-            <Image src="https://pivotallawgroup.com/images/uploads/KimSandher.png" />
+            <Image src={constants.education.poster} />
           </ImageWrapper>
-          <PromoText>Keep learning in the moments that matter.</PromoText>
+          <PromoText>{constants.education.paragraph}</PromoText>
         </PromoContainer>
       </PromoWrapper>
       <WhatProsperrDoesWrapper>
-        <Heading>What Prosperr does for you?</Heading>
+        <Heading>{constants.prosperrDoes.heading}</Heading>
         <TabWrapper>
-          <Tab>
-            <TabText isActive>Market Analysis</TabText>
-          </Tab>
-          <Tab>
-            <TabText>Trending Financial Topics</TabText>
-          </Tab>
+          {constants.prosperrDoes.tabs.map((item, index) => {
+            return (
+              <Tab key={index}>
+                <TabText
+                  isActive={activeTab === item}
+                  onClick={() => setActiveTab(item)}
+                >{item}</TabText>
+              </Tab>
+            );
+          })}
         </TabWrapper>
         <WhatProsperrDoesContent>
           <Heading left lines={2}>
@@ -183,16 +189,15 @@ const Index = (props) => {
         </WhatProsperrDoesContent>
       </WhatProsperrDoesWrapper>
       <TestimonialWrapper>
-        <Heading color="#fff">Testimonials</Heading>
+        <Heading color="#fff">{constants.testimonials.heading}</Heading>
         <SubHeading color="#fff">
-          Here’s what the champions think about us.
+        {constants.testimonials.subHeading}
         </SubHeading>
         <TestimonyConatainer>
           <AlignItemCenterHorizontally>
-            <TestimonyCard />
-            <TestimonyCard />
-            <TestimonyCard />
-            <TestimonyCard />
+          {constants.testimonials.items.map((item, index)=>{
+            return <TestimonyCard key={index} testimonial={item}/>
+          })}
           </AlignItemCenterHorizontally>
         </TestimonyConatainer>
       </TestimonialWrapper>

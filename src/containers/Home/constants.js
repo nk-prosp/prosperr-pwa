@@ -106,4 +106,34 @@ export default {
       },
     ],
   },
+  education: {
+    poster: './assets/images/education.png',
+    paragraph: 'Keep learning in the moments that matter',
+  },
+  prosperrDoes: {
+    heading: '',
+    tabs: [
+      "Market Analysis",
+      "Trending Financial Topics",
+    ],
+    contents: [
+
+    ],
+  },
+  testimonials: {
+    heading: 'Testimonials',
+    subHeading: 'Here’s what the champions think about us.',
+    items: [
+      {
+        name: "Kim Sandher",
+        description: "CEO, Happy Studio",
+        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur gravida ipsum ac varius. Phasellus a ornare metus. Praesent non erat lorem. Quisque sed est nec sapien pellentesque sagittis. Vivamus iaculis sollicitudin ante, ut placerat enim posuere at."
+      },
+      {
+        name: "Kim Sandher",
+        description: "CEO, Happy Studio",
+        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur gravida ipsum ac varius. Phasellus a ornare metus. Praesent non erat lorem. Quisque sed est nec sapien pellentesque sagittis. Vivamus iaculis sollicitudin ante, ut placerat enim posuere at."
+      },
+    ]
+  }
 };

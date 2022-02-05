@@ -11,20 +11,18 @@ import {
   QouteIcon,
 } from "./testimonyCard.styled";
 
-export default function TestimonyCard() {
+export default function TestimonyCard({
+  testimonial
+}) {
   return (
     <OuteWrapper>
       <ContentWrapper>
         <QouteIcon src={process.env.PUBLIC_URL + "/assets/images/quote.png"} />
         <ContentInternalWrapper>
-          <Heading>Kim Sandher</Heading>
-          <SubHeading>CEO, Happy Studio</SubHeading>
+          <Heading>{testimonial.name}</Heading>
+          <SubHeading>{testimonial.description}</SubHeading>
           <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            efficitur gravida ipsum ac varius. Phasellus a ornare metus.
-            Praesent non erat lorem. Quisque sed est nec sapien pellentesque
-            sagittis. Vivamus iaculis sollicitudin ante, ut placerat enim
-            posuere at.
+          {testimonial.review}
           </Paragraph>
         </ContentInternalWrapper>
       </ContentWrapper>
